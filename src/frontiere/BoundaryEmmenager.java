@@ -10,6 +10,7 @@ public class BoundaryEmmenager {
 	}
 
 	public void emmenager(String nomVisiteur) {
+		int forceDruide;
 		if (controlEmmenager.isHabitant(nomVisiteur)) {
 			System.out.println(
 					"Mais vous êtes déjà un habitant du village !");
@@ -27,12 +28,13 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-					//TODO a completer
+					System.out.println("Bienvenue villageois " + nomVisiteur);
+					forceDruide = Clavier.entrerEntier("Quel est votre force ? ");
+					controlEmmenager.ajouterDruide(nomVisiteur, forceDruide, , choixUtilisateur);
 					break;
 
 				default:
-					System.out
-							.println("Vous devez choisir le chiffre 1 ou 2 !");
+					System.out.println("Vous devez choisir le chiffre 1 ou 2 !");
 					break;
 				}
 			} while (choixUtilisateur != 1 && choixUtilisateur != 2);
