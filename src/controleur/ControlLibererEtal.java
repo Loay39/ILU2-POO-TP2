@@ -11,7 +11,14 @@ public class ControlLibererEtal {
 
 	public boolean isVendeur(String nomVendeur) {
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
-		return !etal.equals(null);
+		boolean etalPasNul = true;
+		try {
+			etalPasNul = !etal.equals(null);
+		} catch (NullPointerException e) {
+			etalPasNul = false;
+		} finally {
+			return etalPasNul;
+		}
 	}
 
 	/**
